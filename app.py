@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 import joblib
 import numpy as np
+import os
 
 app = Flask(__name__)
 
 # Load model
-model = joblib.load("C:\\Users\\renuc\\AML\\saved models\\Random_Forest.joblib")
+model = joblib.load(os.path.join("saved models", "Random_Forest.joblib"))
 
 @app.route('/')
 def home():
